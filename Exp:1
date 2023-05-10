@@ -1,0 +1,30 @@
+#include <stdio.h>
+#include <stdbool.h>
+#include <string.h>
+
+bool dfaStartAndEndsWithA(const char* str) {
+    int length = strlen(str);
+    if (length < 2)
+        return false;
+    if (str[0] != 'a' || str[length - 1] != 'b')
+        return false;
+    for (int i = 1; i < length - 1; i++) {
+        if (str[i] != 'a' && str[i] != 'b')
+            return false;
+    }
+    return true;
+}
+
+int main() {
+    char str[100];
+    
+    printf("Enter a string: ");
+    scanf("%s", str);
+    
+    if (dfaStart0AndEndsWith1(str))
+        printf("string is accepted");
+    else
+        printf("string is not accepted");
+    
+    return 0;
+}
